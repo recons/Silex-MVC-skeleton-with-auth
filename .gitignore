@@ -1,7 +1,7 @@
-OracleDBCourseproject.iws
-.idea/workspace.xml
-.idea/dataSources.local.xml
-var/cache/*
-var/logs/*
-vendor/*
-web/assets/vendor/*
+/OracleDBCourseproject.iws
+/.idea/workspace.xml
+/.idea/dataSources.local.xml
+/var/cache/
+/var/logs/
+/vendor/
+/web/assets/vendor/
