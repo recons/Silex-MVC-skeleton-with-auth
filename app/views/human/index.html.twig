@@ -1,0 +1,54 @@
+{% extends "layout.html.twig" %}
+
+{% block page_title %}Список людей{% endblock %}
+
+{% block page_content %}
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel" style="height:600px;">
+                <div class="x_title">
+                    <h2>Список людей</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>ID</th>
+                                <th>Фамилия</th>
+                                <th>Имя</th>
+                                <th>Отчество</th>
+                                <th>Группа</th>
+                                <th>Тип</th>
+                                <th>Опции</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for human in people %}
+                            <tr>
+                                <th scope="row">{{ loop.index }}</th>
+                                <td>{{ human.id }}</td>
+                                <td>{{ human.lastname }}</td>
+                                <td>{{ human.firstname }}</td>
+                                <td>{{ human.pathername }}</td>
+                                <td>{{ human.group.name }}</td>
+                                {% if human.type == 's' %}
+                                    <td>Студент</td>
+                                {% else %}
+                                    <td>Преподаватель</td>
+                                {% endif %}
+                                <td>
+                                    <a href="{{ path('people_edit', {'id': human.id}) }}" class="btn btn-primary"><i class="fa fa-edit"></i> Изменить</a>
+                                    <a href="{{ path('people_delete', {'id': human.id}) }}" class="btn btn-danger"><i class="fa fa-trash"></i> Удалить</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /page content -->
+{% endblock %}

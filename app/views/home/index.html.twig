@@ -1,0 +1,48 @@
+{% extends "layout.html.twig" %}
+
+{% block page_title %}Статистика{% endblock %}
+
+{% block page_content %}
+    <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Статистика по годам</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <canvas id="mybarChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /page content -->
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('assets/vendor/Chart.js/dist/Chart.min.js') }}"></script>
+    <script>
+        var ctx = document.getElementById("mybarChart");
+        var mybarChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: {{ labels }},
+                datasets: [{
+                    label: 'Средний балл',
+                    backgroundColor: "#26B99A",
+                    data: {{ data }}
+                }]
+            },
+
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+{% endblock %}

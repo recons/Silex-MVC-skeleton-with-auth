@@ -1,0 +1,48 @@
+{% extends "layout.html.twig" %}
+
+{% block page_title %}Список оценок{% endblock %}
+
+{% block page_content %}
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel" style="height:600px;">
+                <div class="x_title">
+                    <h2>Список оценок</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>ID</th>
+                                <th>Студент</th>
+                                <th>Предмет</th>
+                                <th>Преподаватель</th>
+                                <th>Оценка</th>
+                                <th>Опции</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for mark in marks %}
+                            <tr>
+                                <th scope="row">{{ loop.index }}</th>
+                                <td>{{ mark.id }}</td>
+                                <td>{{ mark.student.fullname }}</td>
+                                <td>{{ mark.subject.name }}</td>
+                                <td>{{ mark.teacher.fullname }}</td>
+                                <td>{{ mark.value }}</td>
+                                <td>
+                                    <a href="{{ path('marks_edit', {'id': mark.id}) }}" class="btn btn-primary"><i class="fa fa-edit"></i> Изменить</a>
+                                    <a href="{{ path('marks_delete', {'id': mark.id}) }}" class="btn btn-danger"><i class="fa fa-trash"></i> Удалить</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /page content -->
+{% endblock %}

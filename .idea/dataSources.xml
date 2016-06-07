@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="579558098">
+    <data-source source="LOCAL" name="Oracle - @localhost" uuid="4b8b203b-c517-4872-bb51-e7671a1d5bfa">
+      <driver-ref>oracle</driver-ref>
+      <auto-commit>false</auto-commit>
+      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
+      <jdbc-url>jdbc:oracle:thin:@//localhost:1521/stud</jdbc-url>
+    </data-source>
+  </component>
+</project>

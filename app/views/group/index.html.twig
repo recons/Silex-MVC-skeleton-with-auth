@@ -1,0 +1,42 @@
+{% extends "layout.html.twig" %}
+
+{% block page_title %}Список групп{% endblock %}
+
+{% block page_content %}
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel" style="height:600px;">
+                <div class="x_title">
+                    <h2>Список групп</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th width="5%">#</th>
+                                <th width="5%">ID</th>
+                                <th width="70%">Название</th>
+                                <th>Опции</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for group in groups %}
+                            <tr>
+                                <th scope="row">{{ loop.index }}</th>
+                                <td>{{ group.id }}</td>
+                                <td>{{ group.name }}</td>
+                                <td>
+                                    <a href="{{ path('groups_edit', {'id': group.id}) }}" class="btn btn-primary"><i class="fa fa-edit"></i> Изменить</a>
+                                    <a href="{{ path('groups_delete', {'id': group.id}) }}" class="btn btn-danger"><i class="fa fa-trash"></i> Удалить</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /page content -->
+{% endblock %}

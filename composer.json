@@ -1,0 +1,28 @@
+{
+    "require": {
+        "silex/silex": "2.0.x-dev",
+        "silex/web-profiler": "2.0.x-dev",
+        "symfony/asset": "3.1.x-dev",
+        "symfony/monolog-bridge": "3.1.x-dev",
+        "symfony/security": "3.1.x-dev",
+        "symfony/form": "3.1.x-dev",
+        "symfony/security-csrf": "3.1.x-dev",
+        "symfony/translation": "3.1.x-dev",
+        "symfony/config": "3.1.x-dev",
+        "doctrine/dbal": "2.6.x-dev",
+        "symfony/var-dumper": "3.1.x-dev",
+        "symfony/validator": "3.1.x-dev",
+        "symfony/debug-bundle": "3.1.x-dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "src/Deanery/"
+        }
+    },
+    "scripts": {
+        "run": [
+            "echo 'Started web server on http://localhost:8888'",
+            "php -S localhost:8888 -t web web/index_dev.php"
+        ]
+    }
+}
