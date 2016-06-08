@@ -1,7 +1,8 @@
-/OracleDBCourseproject.iws
-/.idea/workspace.xml
-/.idea/dataSources.local.xml
-/var/cache/*
-/var/logs/*
-/vendor/*
-/composer.lock
+OracleDBCourseproject.iws
+.idea/workspace.xml
+.idea/dataSources.local.xml
+var/cache/*
+var/logs/*
+vendor/*
+composer.lock
+!.empty
