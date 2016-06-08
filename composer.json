@@ -12,11 +12,14 @@
         "doctrine/dbal": "2.6.x-dev",
         "symfony/var-dumper": "3.1.x-dev",
         "symfony/validator": "3.1.x-dev",
-        "symfony/debug-bundle": "3.1.x-dev"
+        "symfony/debug-bundle": "3.1.x-dev",
+        "symfony/process": "3.1.x-dev",
+        "symfony/console": "3.1.x-dev",
+        "symfony/finder": "3.1.x-dev"
     },
     "autoload": {
         "psr-4": {
-            "": "src/Deanery/"
+            "": "src/"
         }
     },
     "scripts": {
