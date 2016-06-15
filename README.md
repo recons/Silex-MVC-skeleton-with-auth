@@ -9,6 +9,4 @@ This project is a sample silex application with some basic crud operations.
 + Config files to .yml
 + REST API with AngularJS
 + OAuth2
-+ ReactPHP server
-+ Replace Oracle with MySQL
-+ Write async mysql driver based on Rx.PHP
++ ~~ReactPHP server~~
